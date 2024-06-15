@@ -18,7 +18,7 @@ const Redirect = () => {
       const urlsCollection = collection(db, "urls");
       const q = query(
         urlsCollection,
-        where("shortUrl", "==", `http://localhost:3000/${shortId}`)
+        where("shortUrl", "==", `${window.location.origin}/${shortId}`)
       );
       const querySnapshot = await getDocs(q);
 
